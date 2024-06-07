@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px; /* Set the maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.home-page-content {
+  font-family: Arial, sans-serif;
+  padding: 20px; /* Add padding to the content */
+}
+
+.form-title {
+  color: #0c0c60; /* Change the text color */
+  font-size: 26px; /* Change the font size */
+  margin-bottom: 20px; /* Add margin bottom for spacing */
+  margin-left: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Add margin between form groups */
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px; /* Make labels bold */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Set the width to 100% */
+  padding: 8px; /* Add padding to inputs and textareas */
+  border: 1px solid #ccc; /* Add border to inputs and textareas */
+  border-radius: 4px; /* Add border radius */
+}
+
+.big-textarea {
+  height: 200px; /* Set the height to your desired value */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+  background-color: #007bff; /* Set button background color */
+  color: white; /* Set button text color */
+  padding: 10px 20px; /* Add padding to button */
+  border: none; /* Remove button border */
+  border-radius: 4px; /* Add border radius */
+  cursor: pointer; /* Add cursor pointer */
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

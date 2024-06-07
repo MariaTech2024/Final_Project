@@ -1,0 +1,58 @@
+.tag-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #a5cafe;
+  }
+  
+  .tag-page h1 {
+    color: #151646;
+    margin-bottom: 20px;
+  }
+  
+  .tag-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tag-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .tag-item h2 {
+    margin: 0 0 10px;
+    color: #007bff;
+  }
+  
+  .tag-item p {
+    margin: 0 0 10px;
+    color: #555;
+  }
+  
+  .tag-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tag-form input[type="text"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .tag-form input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #355c86;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tag-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }

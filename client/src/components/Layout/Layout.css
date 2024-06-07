@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.content {
+    display: flex;
+    flex: 1 1 auto;
+    border-right: 1px solid #232121; /* Add border on the right side */
+    box-sizing: border-box; 
+}
+
+.left-sidebar {
+    width: 250px;
+    background-color: #a6c3df;
+    padding: 80px;
+    border-right: 1px solid #ccc;
+    height: 100%; 
+    box-sizing: border-box;
+    gap: 5;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
