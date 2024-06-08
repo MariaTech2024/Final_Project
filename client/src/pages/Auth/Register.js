@@ -6,12 +6,41 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    // Simulating register action without Redux
-    console.log("Registering with:", { username, email, password });
-    // You can replace the console.log with your actual register logic
+
+    // Basic validation
+    if (!username || !email || !password) {
+      setErrorMessage('Please fill in all fields');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Registration successful');
+      } else {
+        if (response.status === 409) {
+          setErrorMessage('User already exists');
+        } else {
+          console.error('Registration failed');
+          setErrorMessage('Registration failed');
+        }
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+      setErrorMessage('Error during registration');
+    }
   };
 
   return (
@@ -19,6 +48,8 @@ const Register = () => {
       <div className="register-card">
         <div className="register-left">
           <h1>Register</h1>
+          {successMessage && <p className="success-message">{successMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <form onSubmit={handleRegister}>
             <input
               type="text"

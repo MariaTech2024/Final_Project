@@ -1,17 +1,39 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./login.css";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Simulating login action without Redux
-    console.log("Logging in with:", { username, password });
-    // You can replace the console.log with your actual login logic
+
+    try {
+      const response = await fetch('http://localhost:5000/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      // If login is successful, set loggedIn to true
+      setLoggedIn(true);
+    } catch (error) {
+      setError('Invalid email or password');
+    }
   };
+
+  if (loggedIn) {
+    return <Navigate to="/" />
+  }
 
   return (
     <div className="login-container">
@@ -28,13 +50,14 @@ const LoginPage = () => {
         </div>
         <div className="login-right">
           <h1>Login</h1>
+          {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleLogin}>
             <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="login-input"
             />
             <input

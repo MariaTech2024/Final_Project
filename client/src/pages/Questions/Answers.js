@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css'
 
-const Answer = ({ questionIndex, addAnswer, answers }) => {
+const Answers = ({ questionIndex, addAnswer, answers }) => {
   const [answerContent, setAnswerContent] = useState('');
   const [username, setUsername] = useState(''); // Assuming you have a way to get the username
 
@@ -36,4 +36,4 @@ const Answer = ({ questionIndex, addAnswer, answers }) => {
   );
 };
 
-export default Answer;
+export default Answers;

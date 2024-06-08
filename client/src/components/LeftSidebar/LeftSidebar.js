@@ -6,16 +6,16 @@ const LeftSidebar = () => {
   return (
     <div className="left-sidebar">
       <div className="sidebar-section">
-        <NavLink to="/" activeClassName="active-link">Home</NavLink>
+        <NavLink to="/" activeclassname="active-link">Home</NavLink>
       </div>
       <div className="sidebar-section">
-        <NavLink to="/questions" activeClassName="active-link">Questions</NavLink>
+        <NavLink to="/questions" activeclassname="active-link">Questions</NavLink>
       </div>
       <div className="sidebar-section">
-        <NavLink to="/tags" activeClassName="active-link">Tags</NavLink>
+        <NavLink to="/tags" activeclassname="active-link">Tags</NavLink>
       </div>
       <div className="sidebar-section">
-        <NavLink to="/userProfile" activeClassName="active-link">Profile</NavLink>
+        <NavLink to="/userProfile" activeclassname="active-link">Profile</NavLink>
       </div>
     </div>
   );

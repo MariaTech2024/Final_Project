@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
 
-const HomePage = ({ addQuestion }) => {
+const HomePage = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
@@ -20,25 +20,28 @@ const HomePage = ({ addQuestion }) => {
     setTags(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const newQuestion = { title, body, tags: tags.split(' '), answers: [] };
-    addQuestion(newQuestion);
-    setTitle('');
-    setBody('');
-    setTags('');
-    saveQuestionToStorage(newQuestion); // Save the question to localStorage
-    navigate('/questions');
+    const newQuestion = { title, body, tags };
+    try {
+      const response = await fetch('http://localhost:5000/questions/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newQuestion),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to add question');
+      }
+      const responseData = await response.json();
+      console.log('Question added:', responseData);
+      navigate('/questions');
+    } catch (error) {
+      console.error('Error adding question:', error.message);
+    }
   };
 
-  const saveQuestionToStorage = (question) => {
-    // Retrieve existing questions from localStorage
-    const existingQuestions = JSON.parse(localStorage.getItem('questions')) || [];
-    // Add the new question to the existing questions array
-    const updatedQuestions = [...existingQuestions, question];
-    // Save the updated questions array back to localStorage
-    localStorage.setItem('questions', JSON.stringify(updatedQuestions));
-  };
 
   return (
     <div className="container">

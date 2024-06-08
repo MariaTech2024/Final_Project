@@ -1,89 +1,34 @@
 .search-container {
-    width: 100%;
-    max-width: 600px;
-    padding-top: 10px;
-  }
-  
-  .input-box {
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .search-button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .search-results {
-    margin-top: 10px;
-    position: relative; /* Position relative for dropdown positioning */
-  }
-  
-  .dropdown-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width dropdown */
-    z-index: 999; /* Ensure dropdown is above other content */
-  }
-  
-  .dropdown-item {
-    cursor: pointer;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .no-results {
-    padding: 10px;
-    text-align: center;
-    color: #777;
-  }
-  
-  .box {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .category {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .heading {
-    margin-top: 5px;
-  }
-  
-  .author {
-    color: #777;
-  }
+  width: 100%;
+  max-width: 600px;
+  padding-top: 10px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.search-button {
+  padding: 10px 20px; /* Adjust padding to match the input height */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  height: 40px; /* Match the height of the input */
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
