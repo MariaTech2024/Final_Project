@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import path from "path";
 import userRouter from './routes/user.js';
 import questionRouter from './routes/question.js';
 import answerRouter from './routes/answer.js';
@@ -36,3 +37,11 @@ app.use('/answers', answerRouter);
 
 
 app.listen (process.env.PORT || 5000);
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+// All other GET requests not handled before will return our React app
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
