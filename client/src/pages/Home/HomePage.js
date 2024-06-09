@@ -43,7 +43,7 @@ const HomePage = () => {
       }
 
       const responseData = await response.json(); // Parse the response data
-      //console.log('Question added:', responseData); // Log the response data
+      console.log('Question added:', responseData); // Log the response data
       navigate('/questions'); // Navigate to the questions page
     } catch (error) {
       // Handle any errors during the question submission
