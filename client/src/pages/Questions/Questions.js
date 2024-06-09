@@ -3,10 +3,12 @@ import Answer from './Answers';
 import './style.css';
 
 const QuestionPage = () => {
-  const [questions, setQuestions] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredQuestions, setFilteredQuestions] = useState([]);
+  // State variables
+  const [questions, setQuestions] = useState([]); // State for storing all questions
+  const [searchQuery, setSearchQuery] = useState(''); // State for storing search query
+  const [filteredQuestions, setFilteredQuestions] = useState([]); // State for storing filtered questions
 
+  // Fetch questions from the server on component mount
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,6 +17,7 @@ const QuestionPage = () => {
           throw new Error('Failed to fetch data');
         }
         const data = await response.json();
+        // Map questions to include answers property, set both questions and filteredQuestions state
         const questionsWithAnswers = data.map(question => ({
           ...question,
           answers: question.answers || []
@@ -28,6 +31,7 @@ const QuestionPage = () => {
     fetchData();
   }, []);
 
+  // Filter questions based on search query
   useEffect(() => {
     const filtered = questions.filter(question =>
       question.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -37,37 +41,31 @@ const QuestionPage = () => {
     setFilteredQuestions(filtered);
   }, [searchQuery, questions]);
 
-  const addAnswer = (questionIndex, newAnswer) => {
-    setQuestions(prevQuestions => {
-      const newQuestions = [...prevQuestions];
-      if (questionIndex >= 0 && questionIndex < newQuestions.length) {
-        newQuestions[questionIndex].answers.push(newAnswer);
-      }
-      return newQuestions;
-    });
-  };
-
+  // JSX rendering
   return (
     <div className="container">
       <h2>Questions</h2>
+      {/* Search input */}
       <input
         type="search"
         placeholder="Search questions..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <div>
+      {/* List of questions */}
+      <div className="questions-list">
         {filteredQuestions.map((question, index) => (
-          <div key={index} className="question">
-            <h3>Title: {question.title}</h3>
-            <p><strong>Body: </strong>{question.body}</p>
-            <p><strong>Tags: </strong>{question.tags}</p>
-            <Answer
-              questionIndex={index}
-              answers={question.answers}
-              addAnswer={addAnswer}
-              key={`answer-${index}`}
-            />
+          <div key={index} className="question-container">
+            <div className="question-details">
+              {/* Question details */}
+              <h3>{question.title}</h3>
+              <p><strong>Body: </strong>{question.body}</p>
+              <p><strong>Tags: </strong>{question.tags}</p>
+            </div>
+            {/* Component to add answers */}
+            <div className="add-answer-container">
+              <Answer questionId={question.id} />
+            </div>
           </div>
         ))}
       </div>

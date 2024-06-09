@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.left-sidebar {
+  width: 25%; /* Default width for large devices */
+  margin: 0 auto;
+}
+
+/* Small devices (Mobile) */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+  /* Adjust typography for smaller screens */
+  h1 {
+    font-size: 1.5rem; /* 24px */
+  }
+  .left-sidebar {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Medium devices (Tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  /* Adjust typography for tablets */
+  h1 {
+    font-size: 2rem; /* 32px */
+  }
+  .left-sidebar {
+    width: 30%;
   }
 }
+
+/* Large devices (Desktops) */
+@media screen and (min-width: 992px) {
+  /* Adjust layout for desktops */
+  .container {
+    width: 80%;
+  }
+  /* Fine-tune typography for desktops */
+  h1 {
+    font-size: 2.5rem; /* 40px */
+  }
+  .left-sidebar {
+    width: 25%;
+  }
+}
+

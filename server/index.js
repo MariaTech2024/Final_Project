@@ -34,10 +34,5 @@ app.use('/users', userRouter);
 app.use('/questions', questionRouter);
 app.use('/answers', answerRouter);
 
-// Define the port for the server to listen on
-const PORT = process.env.PORT || 5000;
 
-// Start the server and listen for incoming requests
-app.listen(PORT,  () => {
-  console.log(`Server is listening on port:${PORT}`);
-});
+app.listen (process.env.PORT || 5000);

@@ -8,8 +8,7 @@
 .content {
     display: flex;
     flex: 1 1 auto;
-    border-right: 1px solid #232121; /* Add border on the right side */
-    box-sizing: border-box; 
+    border-right: 1px solid #232121; 
 }
 
 .left-sidebar {
@@ -23,6 +22,8 @@
 }
 
 .main-content {
-    flex: 1;
-    padding: 20px;
+    flex: 1; /* Take up remaining space */
+    margin-right: 200px; 
+    padding: 10px;
+    
 }

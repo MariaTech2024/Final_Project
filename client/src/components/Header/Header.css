@@ -22,7 +22,7 @@
     font-size: x-large;
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 30px;
     font-weight: bold;
 }
 
@@ -34,13 +34,13 @@
 
 
 .login-button {
-    padding: 5px 15px; /* Larger padding */
-    background: #5737e3; /* Example color */
+    padding: 5px 15px; 
+    background: #5737e3; 
     color: #fff;
     border: none;
     cursor: pointer;
     margin-right: 20px;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px; 
     font-size: 15px;
 }
 

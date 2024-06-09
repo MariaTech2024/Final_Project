@@ -5,12 +5,13 @@ import TagForm from './TagForm';
 
 const TagPage = () => {
   return (
-    <div className="tag-page">
-      <h1>Tags</h1>
-      <ul className="tag-list">
+    <div className="tag-page"> {/* Container for the tag page */}
+      <h1>Tags</h1> {/* Title for the tag page */}
+      <ul className="tag-list"> {/* List of tags */}
+        {/* Map over the tagsList and render a TagForm component for each tag */}
         {tagsList.map((tag) => (
-          <li key={tag.id}>
-            <TagForm tag={tag} />
+          <li key={tag.id}> {/* Key prop is required when rendering a list */}
+            <TagForm tag={tag} /> {/* Pass tag data as props to TagForm component */}
           </li>
         ))}
       </ul>

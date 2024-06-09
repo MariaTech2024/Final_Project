@@ -1,52 +1,51 @@
 .container {
-  max-width: 800px; /* Set the maximum width for the container */
-  margin: 0 auto; /* Center the container horizontally */
+  max-width: 100%; 
 }
 
 .home-page-content {
   font-family: Arial, sans-serif;
-  padding: 20px; /* Add padding to the content */
+  padding: 20px;
 }
 
 .form-title {
-  color: #0c0c60; /* Change the text color */
-  font-size: 26px; /* Change the font size */
-  margin-bottom: 20px; /* Add margin bottom for spacing */
+  color: #0c0c60; 
+  font-size: 26px; 
+  margin-bottom: 20px; 
   margin-left: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px; /* Add margin between form groups */
+  margin-bottom: 20px; 
 }
 
 label {
   font-weight: bold;
-  font-size: 16px; /* Make labels bold */
+  font-size: 16px; 
 }
 
 input[type="text"],
 textarea {
-  width: 100%; /* Set the width to 100% */
-  padding: 8px; /* Add padding to inputs and textareas */
-  border: 1px solid #ccc; /* Add border to inputs and textareas */
-  border-radius: 4px; /* Add border radius */
+  width: 100%; 
+  padding: 8px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
 }
 
 .big-textarea {
-  height: 200px; /* Set the height to your desired value */
-  resize: vertical; /* Allow vertical resizing */
+  height: 200px; 
+  resize: vertical; 
 }
 
 button {
-  background-color: #007bff; /* Set button background color */
-  color: white; /* Set button text color */
-  padding: 10px 20px; /* Add padding to button */
-  border: none; /* Remove button border */
-  border-radius: 4px; /* Add border radius */
-  cursor: pointer; /* Add cursor pointer */
+  background-color: #007bff; 
+  color: white; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
   font-size: 16px;
 }
 
 button:hover {
-  background-color: #0056b3; /* Change background color on hover */
+  background-color: #0056b3; 
 }

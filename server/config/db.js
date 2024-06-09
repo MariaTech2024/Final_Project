@@ -13,8 +13,11 @@ export const database = knex({
       user:PGUSER,
       password:PGPASSWORD,
       database:PGDATABASE,
+      ssl: {
+        rejectUauthorized: false,
+      },
   }
-})
+});
 
 
 

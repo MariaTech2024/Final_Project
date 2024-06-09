@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/logo.png';
-import SearchBar from '../SearchBar/SearchBar'; // Import the SearchBar component
+import SearchBar from '../SearchBar/SearchBar'; 
 
 const Header = () => {
     // State to track if the user is logged in
@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="nav">
                 {/* Navigation links */}
                 <ul className="nav-list">
-                    <li><a href="/home" className="nav-link">Discussion Platform</a></li>
+                    <li><a href="/home" className="nav-link">Discussion Platform for olim</a></li>
                 </ul>
             </nav>
             <SearchBar /> {/* Replace the static search bar with the SearchBar component */}

@@ -13,7 +13,7 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure pseudo-element is contained within the card */
+    overflow: hidden; 
   }
   
   /* Left side of the card with the form */
@@ -21,15 +21,15 @@
     flex: 1;
     padding: 40px;
     border-right: 1px solid #f0f0f0;
-    color: #333; /* Default text color */
+    color: #333; 
   }
   
   /* Right side of the card with background image */
   .register-right {
-    position: relative; /* Required for pseudo-element positioning */
+    position: relative; 
     flex: 1;
     padding: 40px;
-    color: #370b55; /* Make text white to stand out against the background */
+    color: #370b55; 
     z-index: 1; /* Ensure content is above the background overlay */
   }
   
@@ -42,7 +42,7 @@
     height: 100%;
     background: url('../../assets/image.svg') no-repeat center center;
     background-size: cover;
-    opacity: 0.5; /* Adjust opacity as needed */
+    opacity: 0.5; 
     z-index: -1; /* Place the pseudo-element behind the content */
   }
   
@@ -51,7 +51,7 @@
   .register-right h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: inherit; /* Use inherited color */
+    color: inherit; 
   }
   
   /* Paragraph text */
@@ -60,7 +60,7 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: inherit; /* Use inherited color */
+    color: inherit; 
   }
   
   /* Span text */
@@ -68,7 +68,7 @@
   .register-right span {
     display: block;
     margin-bottom: 10px;
-    color: inherit; /* Use inherited color */
+    color: inherit; 
   }
   
   /* Input fields */
@@ -110,5 +110,5 @@
     width: auto;
     display: inline-block;
     margin-top: 10px;
-    background-color: #007bff; /* Ensure consistent button color */
+    background-color: #007bff; 
   }

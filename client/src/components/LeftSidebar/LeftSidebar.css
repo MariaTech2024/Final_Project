@@ -3,11 +3,11 @@
     background-color: #f0f0f0;
     padding: 20px;
     border-right: 1px solid #ccc;
-    height: 100%; /* Full height of the page */
+    height: 100%; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Add gap between sidebar sections */
+    gap: 20px; 
   }
   
   /* Styles for each sidebar section */
@@ -24,20 +24,19 @@
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid transparent;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px; 
     transition: background-color 0.3s, border 0.3s;
-    width: calc(100%); /* Full width minus padding */
+    width: calc(100%); 
   }
   
-  /* Styles for the active link */
   .sidebar-section a.active-link {
     font-weight: bold;
     color: #ffffff;
-    background-color: #2f6bc5; /* Highlight active link */
-    border-color: #ddd; /* Border for active link */
+    background-color: #2f6bc5; 
+    border-color: #ddd; 
   }
   
-  /* Hover effect to make the link look like a button */
+ 
   .sidebar-section a:hover {
     background-color: #7285c9;
     border-color: #0c0a4d;
