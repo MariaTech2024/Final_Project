@@ -29,7 +29,7 @@ app.use(cors({
   credentials: true // Allow cookies to be sent cross-origin
 }));
 
-// Mount routers for different endpoints
+
 app.use('/users', userRouter);
 app.use('/questions', questionRouter);
 app.use('/answers', answerRouter);
